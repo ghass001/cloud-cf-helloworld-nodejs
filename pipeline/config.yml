@@ -1,0 +1,14 @@
+general:
+steps:
+  mtaBuild:
+    buildTarget: 'CF'
+
+
+  cloudFoundryDeploy:
+    deployTool: 'mtaDeployPlugin'
+    deployType: 'standard'
+    cloudFoundry:
+      org: 's0019617342trial'
+      space: 'Dev'
+      credentialsId: 'CF_CREDENTIALSID'
+
