@@ -2,6 +2,7 @@ general:
 steps:
   mtaBuild:
     buildTarget: 'CF'
+    mtaJarLocation: '/path/to/mta/jar/on/your/system
   cloudFoundryDeploy:
     deployTool: 'mtaDeployPlugin'
     deployType: 'standard'
