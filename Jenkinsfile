@@ -1,10 +1,10 @@
 @Library('piper-lib-os') _
 node() {
     stage('prepare') {
-        sh 'git clone "https://github.com/SAP/cloud-cf-helloworld-nodejs.git"'
-	echo 'clone'
-	sh 'cd /var/lib/jenkins/workspace/ipeline_1_REST_persist_in_Memory/cloud-cf-helloworld-nodejs'
+        checkout scm
+	echo 'scm'
         sh 'pwd'
+	sh 'ls'
 	sh 'git checkout 1_REST_persist_in_Memory'
 	echo 'checkout'
         setupCommonPipelineEnvironment script:this
