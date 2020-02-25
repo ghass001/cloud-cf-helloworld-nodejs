@@ -4,6 +4,7 @@ node() {
         sh 'git clone "https://github.com/SAP/cloud-cf-helloworld-nodejs.git"'
 	echo 'clone'
 	sh 'cd cloud-cf-helloworld-nodejs'
+        sh 'pwd'
 	sh 'git checkout 1_REST_persist_in_Memory'
 	echo 'checkout'
         setupCommonPipelineEnvironment script:this
