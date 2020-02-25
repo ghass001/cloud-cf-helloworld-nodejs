@@ -2,8 +2,8 @@ general:
 steps:
   mtaBuild:
     buildTarget: 'CF'
-    dockerImage: 'ppiper/mta-archive-builder'
-    mtaBuildTool: 'classic'
+    dockerImage: ''
+    mtarName: '/home/ghassen/cloud-cf-helloworld-nodejs'
   cloudFoundryDeploy:
     deployTool: 'mtaDeployPlugin'
     deployType: 'standard'
