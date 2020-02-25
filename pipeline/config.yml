@@ -2,7 +2,8 @@ general:
 steps:
   mtaBuild:
     buildTarget: 'CF'
-    dockerImage: ''
+    dockerImage: 'ppiper/mta-archive-builder'
+    mtaBuildTool: 'classic'
   cloudFoundryDeploy:
     deployTool: 'mtaDeployPlugin'
     deployType: 'standard'
