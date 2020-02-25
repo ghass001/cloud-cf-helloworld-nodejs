@@ -90,6 +90,7 @@ void call(Map parameters = [:]) {
         ) {
 
             String projectSettingsFile = configuration.projectSettingsFile?.trim()
+	    echo "OKKKKKKKKKKKKKKKKKKKKK"
             if (projectSettingsFile) {
                 if (projectSettingsFile.startsWith("http")) {
                     projectSettingsFile = downloadSettingsFromUrl(this, projectSettingsFile, 'project-settings.xml')
@@ -113,7 +114,7 @@ void call(Map parameters = [:]) {
 
             def mtaYamlName = "mta.yaml"
             def applicationName = configuration.applicationName
-
+	  
             if (!fileExists(mtaYamlName)) {
                 if (!applicationName) {
                     error "'${mtaYamlName}' not found in project sources and 'applicationName' not provided as parameter - cannot generate '${mtaYamlName}' file."
