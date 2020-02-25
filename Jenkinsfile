@@ -1,7 +1,8 @@
 @Library('piper-lib-os') _
 node() {
     stage('prepare') {
-        checkout scm
+        sh 'git pull "https://github.com/SAP/cloud-cf-helloworld-nodejs.git"'
+	sh 'git checkout 1_REST_persist_in_Memory'
         setupCommonPipelineEnvironment script:this
     }
 
