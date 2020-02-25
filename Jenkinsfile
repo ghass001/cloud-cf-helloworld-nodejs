@@ -5,12 +5,9 @@ node() {
         checkout scm
         setupCommonPipelineEnvironment script:this
     }
-    
-    stage('load') {
-        scr = load 'mtaBuild.groovy'
-    }
 
     stage('bld') {
+        scr = load 'mtaBuild.groovy'
         scr script: this
     }
 
