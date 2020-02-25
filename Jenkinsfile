@@ -3,7 +3,7 @@ node() {
     stage('prepare') {
         sh 'git clone "https://github.com/SAP/cloud-cf-helloworld-nodejs.git"'
 	echo 'clone'
-	sh 'cd cloud-cf-helloworld-nodejs'
+	sh 'cd /var/lib/jenkins/workspace/ipeline_1_REST_persist_in_Memory/cloud-cf-helloworld-nodejs'
         sh 'pwd'
 	sh 'git checkout 1_REST_persist_in_Memory'
 	echo 'checkout'
@@ -12,6 +12,7 @@ node() {
 
     stage('build') {
 	echo 'building'
+	sh 'pwd'
         sh 'mbt build -s /var/lib/jenkins/workspace/ipeline_1_REST_persist_in_Memory/cloud-cf-helloworld-nodejs --mtar com.sap.piper.node.hello.world.mtar --platform cf --target ./'
     }
 
