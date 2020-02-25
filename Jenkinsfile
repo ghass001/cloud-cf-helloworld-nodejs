@@ -13,7 +13,7 @@ node() {
     stage('build') {
 	echo 'building'
 	sh 'pwd'
-        sh 'mbt build -s /var/lib/jenkins/workspace/ipeline_1_REST_persist_in_Memory/cloud-cf-helloworld-nodejs --mtar com.sap.piper.node.hello.world.mtar --platform cf --target ./'
+        sh 'mbt build --mtar com.sap.piper.node.hello.world.mtar --platform cf --target ./'
     }
 
     stage('deploy') {
