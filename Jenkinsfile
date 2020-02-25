@@ -5,7 +5,12 @@ pipeline {
         stage('prepare') { 
             steps {
                 echo 'prepare'
-                setupCommonPipelineEnvironment script:this
+		node() {
+		     stage("scm") {
+	                checkout scm
+                        setupCommonPipelineEnvironment script:this
+                     }
+		}
             }
         }
     }
