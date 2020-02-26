@@ -8,7 +8,7 @@ node() {
 
     stage('build') {
 	scr = load 'mtaBuild.groovy'
-	scr.mtaBuild(this) 
+	mtaBuild script: this 
     }
 
     stage('deploy') {
