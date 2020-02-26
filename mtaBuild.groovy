@@ -8,6 +8,7 @@ import groovy.transform.Field
 
 import static com.sap.piper.Utils.downloadSettingsFromUrl
 
+echo 'testt'
 @Field def STEP_NAME = getClass().getName()
 
 @Field Set GENERAL_CONFIG_KEYS = []
