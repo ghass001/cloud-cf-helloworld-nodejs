@@ -10,7 +10,6 @@ import static com.sap.piper.Utils.downloadSettingsFromUrl
 
 
 
-def script = parameters.script
 @Field def STEP_NAME = getClass().getName()
 
 @Field Set GENERAL_CONFIG_KEYS = []
