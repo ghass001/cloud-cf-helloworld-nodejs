@@ -8,7 +8,9 @@ import groovy.transform.Field
 
 import static com.sap.piper.Utils.downloadSettingsFromUrl
 
+def exec(pr){
 
+script = pr
 echo 'okk'
 @Field def STEP_NAME = getClass().getName()
 
@@ -172,7 +174,7 @@ void call(Map parameters) {
         }
     }
 }
-
+}
 def String getMtaId(String fileName){
     def mtaYaml = readYaml file: fileName
     if (!mtaYaml.ID) {
