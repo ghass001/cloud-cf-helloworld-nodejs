@@ -66,7 +66,7 @@ def script = parameters.script
 void call(Map parameters) {
     handlePipelineStepErrors(stepName: STEP_NAME, stepParameters: parameters) {
 
-        final script = checkScript(this, parameters) ?: this
+        final script = parameters.script
 
         // load default & individual configuration
         Map configuration = ConfigurationHelper.newInstance(this)
