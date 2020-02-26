@@ -8,8 +8,6 @@ import groovy.transform.Field
 
 import static com.sap.piper.Utils.downloadSettingsFromUrl
 
-def script
-echo 'okk'
 @Field def STEP_NAME = getClass().getName()
 
 @Field Set GENERAL_CONFIG_KEYS = []
@@ -63,11 +61,10 @@ echo 'okk'
  */
 @GenerateDocumentation
 void call(Map parameters = [:]) {
-    echo "tooool ${parameters.script.mtaBuildTool}"
     handlePipelineStepErrors(stepName: STEP_NAME, stepParameters: parameters) {
 
-        
         final script = checkScript(this, parameters) ?: this
+
         // load default & individual configuration
         Map configuration = ConfigurationHelper.newInstance(this)
             .loadStepDefaults()
@@ -93,7 +90,6 @@ void call(Map parameters = [:]) {
         ) {
 
             String projectSettingsFile = configuration.projectSettingsFile?.trim()
-	    echo "OKKKKKKKKKKKKKKKKKKKKK"
             if (projectSettingsFile) {
                 if (projectSettingsFile.startsWith("http")) {
                     projectSettingsFile = downloadSettingsFromUrl(this, projectSettingsFile, 'project-settings.xml')
@@ -117,7 +113,7 @@ void call(Map parameters = [:]) {
 
             def mtaYamlName = "mta.yaml"
             def applicationName = configuration.applicationName
-	  
+
             if (!fileExists(mtaYamlName)) {
                 if (!applicationName) {
                     error "'${mtaYamlName}' not found in project sources and 'applicationName' not provided as parameter - cannot generate '${mtaYamlName}' file."
@@ -153,7 +149,7 @@ void call(Map parameters = [:]) {
                     break
                 case 'cloudMbt':
                     options.push("--platform ${configuration.platform}")
-                    options.push("--target /home/build/")
+                    options.push("--target /home/ghassen/cloud-cf-helloworld-nodejs")
                     if (configuration.extension) options.push("--extensions=${configuration.extension}")
                     mtaCall = "mbt build ${options.join(' ')}"
                     break
@@ -182,4 +178,3 @@ def String getMtaId(String fileName){
     }
     return mtaYaml.ID
 }
-return this
