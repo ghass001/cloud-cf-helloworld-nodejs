@@ -7,8 +7,7 @@ node() {
     }
 
     stage('build') {
-	scr = load 'mtaBuild.groovy'
-	scr script: this 
+	mtaBuild script: this
     }
 
     stage('deploy') {
