@@ -65,7 +65,6 @@ echo 'okk'
 void call(Map parameters) {
     handlePipelineStepErrors(stepName: STEP_NAME, stepParameters: parameters) {
 
-        final script = parameters.script
         echo " tooool ${script.mtaBuildTool}"
         // load default & individual configuration
         Map configuration = ConfigurationHelper.newInstance(this)
