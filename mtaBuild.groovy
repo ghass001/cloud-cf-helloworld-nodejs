@@ -8,9 +8,7 @@ import groovy.transform.Field
 
 import static com.sap.piper.Utils.downloadSettingsFromUrl
 
-def exec(pr){
 
-script = pr
 echo 'okk'
 @Field def STEP_NAME = getClass().getName()
 
