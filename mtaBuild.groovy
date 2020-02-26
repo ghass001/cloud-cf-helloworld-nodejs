@@ -62,10 +62,11 @@ echo 'okk'
  * Executes the SAP Multitarget Application Archive Builder to create an mtar archive of the application.
  */
 @GenerateDocumentation
-void exec(Map parameters) {
+void mtaBuild(Map parameters) {
     handlePipelineStepErrors(stepName: STEP_NAME, stepParameters: parameters) {
 
         echo " tooool ${parameters}"
+        script = parameters.script
         // load default & individual configuration
         Map configuration = ConfigurationHelper.newInstance(this)
             .loadStepDefaults()
