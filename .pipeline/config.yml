@@ -4,7 +4,6 @@ steps:
     buildTarget: 'CF'
     dockerImage: ''
     mtaBuildTool: 'cloudMbt'
-    mtarName: '/home/ghassen/cloud-cf-helloworld-nodejs'
   cloudFoundryDeploy:
     deployTool: 'mtaDeployPlugin'
     deployType: 'standard'

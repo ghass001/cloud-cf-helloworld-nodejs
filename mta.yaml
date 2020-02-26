@@ -4,8 +4,7 @@ version: 1.0.0
 description: A Hello World sample application
 provider: SAP Sample generator
 modules:
-    parameters:
-       - name: piper_node_hello_world
-    	 type: nodejs
-   	 path: .	
+  - name: piper_node_hello_world
+    type: nodejs
+    path: .	
   
