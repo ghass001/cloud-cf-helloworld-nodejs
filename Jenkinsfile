@@ -6,7 +6,7 @@ node() {
         setupCommonPipelineEnvironment script:this
     }
 
-    stage('bld') {
+    stage('build') {
         scr = load 'mtaBuild.groovy'
         scr script: this
     }
