@@ -8,7 +8,7 @@ import groovy.transform.Field
 
 import static com.sap.piper.Utils.downloadSettingsFromUrl
 
-
+def script
 echo 'okk'
 @Field def STEP_NAME = getClass().getName()
 
@@ -67,7 +67,7 @@ void mtaBuild(parameters) {
     handlePipelineStepErrors(stepName: STEP_NAME, stepParameters: parameters) {
 
         
-        def script = parameters.script
+        final script = parameters.script
         // load default & individual configuration
         Map configuration = ConfigurationHelper.newInstance(this)
             .loadStepDefaults()
