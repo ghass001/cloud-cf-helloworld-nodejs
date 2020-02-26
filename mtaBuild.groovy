@@ -67,7 +67,7 @@ void mtaBuild(parameters) {
     handlePipelineStepErrors(stepName: STEP_NAME, stepParameters: parameters) {
 
         
-        final script = parameters.script
+        def script = parameters.script
         // load default & individual configuration
         Map configuration = ConfigurationHelper.newInstance(this)
             .loadStepDefaults()
